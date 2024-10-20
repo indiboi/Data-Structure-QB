@@ -142,6 +142,30 @@ void delete_before_specified(int number){
     }
 }
 
+void sort(){
+    if(head == NULL){
+        printf("There is no linked list to sort!\n");
+    }
+    else{
+        while(1){
+            int swapped = 0;
+            struct node* temp = head;
+            while(temp != NULL && temp->next != NULL){
+                if(temp->data > temp->next->data){
+                    int Temp = temp->data;
+                    temp->data = temp->next->data;
+                    temp->next->data = Temp;
+                    swapped = 1;
+                }
+                temp = temp->next;
+            }
+            if(swapped == 0){
+                break;
+            }
+        }
+    }
+}
+
 void display(){
     if(head == NULL){
         printf("No linked list exists\n");
